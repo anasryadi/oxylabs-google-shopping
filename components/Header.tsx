@@ -23,6 +23,7 @@ function Header() {
             <div>
                 <div>
                     <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
+                    <input type="text" name="searchTerm" placeholder="Search..." className="outline-none flex-1" />
                 </div>
             </div>
         </form>

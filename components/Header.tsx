@@ -20,12 +20,17 @@ function Header() {
       <div>
         {/* {FORM} */}
         <form action="">
-            <div>
-                <div>
-                    <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
-                    <input type="text" name="searchTerm" placeholder="Search..." className="outline-none flex-1" />
-                </div>
+          <div className="flex items-center gap-2 w-full px-4">
+            <div className="flex items-center space-x-2 bg-white shadow-xl rounded-full border-0 px-6 py-4 md:max-w-5xl flex-1">
+              <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" />
+              <input
+                type="text"
+                name="searchTerm"
+                placeholder="Search..."
+                className="outline-none flex-1"
+              />
             </div>
+          </div>
         </form>
       </div>
     </header>

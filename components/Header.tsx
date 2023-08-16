@@ -53,7 +53,7 @@ function Header() {
             if (minPrice) params.set("minPrice", minPrice.toString());
             if (maxPrice) params.set("maxPrice", maxPrice.toString());
 
-            router.push(`/search/${searchTerm}?${params.toString()}`)
+            router.push(`/search/${searchTerm}?${params.toString()}`);
 
           }}
         >
@@ -112,7 +112,7 @@ function Header() {
               className="min-w-4"
               placeholder="Max Price..."
             >
-              {["", "100", "250", "500", "750", "900", "1000+"].map((_, i) => (
+              {["", "100", "250", "500", "750", "900", "1000"].map((_, i) => (
                 <SearchSelectItem key={i} value={_.toString()}>
                   {i === 0 ? "No Minimum" : `$${_.toString()}`}
                 </SearchSelectItem>

@@ -4,6 +4,12 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Link from "next/link";
 import SearchButton from "./SearchButton";
+import {
+  SearchSelect,
+  SearchSelectItem,
+  Select,
+  SelectItem,
+} from "@tremor/react";
 
 function Header() {
   return (
@@ -33,6 +39,16 @@ function Header() {
             </div>
             {/* Search Button */}
             <SearchButton />
+          </div>
+
+          <div>
+            <SearchSelect>
+              {[...Array(100)].map((_, i) => (
+                <SearchSelectItem key={i} value={(i + 1).toString()}>
+                  {(i + 1).toString()} pages
+                </SearchSelectItem>
+              ))}
+            </SearchSelect>
           </div>
         </form>
       </div>

@@ -4,6 +4,7 @@ import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Link from "next/link";
 import SearchButton from "./SearchButton";
+import Avatar from "react-avatar";
 import {
   SearchSelect,
   SearchSelectItem,
@@ -20,7 +21,7 @@ const SORT_BY_MAP = {
 
 function Header() {
   return (
-    <header>
+    <header className="flex flex-col items-center md:flex-row md:items-start md:space-x-6 px-2 pt-10 pb-5 md:p-10 md:pb-5">
       <Link href="/">
         <Image
           src="https://links.papareact.com/208"
@@ -48,7 +49,7 @@ function Header() {
             <SearchButton />
           </div>
 
-          <div>
+          <div className="grid grid-cols-2 gap-2 p-4 md:grid-cols-4 max-w-lg md:max-w-none mx-auto items-center">
             <SearchSelect className="min-w-4" placeholder="# of pages">
               {[...Array(100)].map((_, i) => (
                 <SearchSelectItem key={i} value={(i + 1).toString()}>
@@ -81,6 +82,9 @@ function Header() {
             </SearchSelect>
           </div>
         </form>
+      </div>
+      <div className="hidden lg:flex flex-1 justify-end">
+        <Avatar name = "Anas Ryadi" round size="50" />
       </div>
     </header>
   );

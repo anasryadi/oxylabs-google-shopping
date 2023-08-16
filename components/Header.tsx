@@ -3,6 +3,7 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import Image from "next/image";
 import Link from "next/link";
+import SearchButton from "./SearchButton";
 
 function Header() {
   return (
@@ -17,7 +18,7 @@ function Header() {
         />
       </Link>
 
-      <div>
+      <div className="w-full md:max-w-2xl">
         {/* {FORM} */}
         <form action="">
           <div className="flex items-center gap-2 w-full px-4">
@@ -30,6 +31,8 @@ function Header() {
                 className="outline-none flex-1"
               />
             </div>
+            {/* Search Button */}
+            <SearchButton />
           </div>
         </form>
       </div>

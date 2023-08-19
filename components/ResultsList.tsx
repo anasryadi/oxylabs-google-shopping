@@ -36,9 +36,19 @@ function ResultsList({ results, term }: Props) {
       {/* main body */}
       <div>
         {results.map((pageResult, i) => (
-            <div key={pageResult.job_id} className="">
+          <div key={pageResult.job_id} className="">
+            {i !== 0 && <hr className="w-full col-span-full" />}
+            <div className="md:col-span-2 lg:col-span-3 xl:col-span-4 py-5">
+              <div className="flex space-x-2 items-center divide-x-2">
+                <h1>Shop On Google</h1>
+                <h2 className="text-xl font-semibold pl-2">Search Results for Page {i + 1}</h2>
+              </div>
 
+              <h3 className="font-extralight">
+                Showing results for "{decodeURIComponent(term)}"
+              </h3>
             </div>
+          </div>
         ))}
       </div>
     </div>

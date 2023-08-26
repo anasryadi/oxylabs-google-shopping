@@ -1,3 +1,4 @@
+import { ProductData } from "@/typings";
 import { NextResponse } from "next/server";
 
 type Params = { params: { id: string } };
@@ -35,5 +36,7 @@ export async function GET(request: Request, { params: { id } }: Params) {
       })
     );
   }
-  const productData: ProductData = data.results[0]
+  const productData: ProductData = data.results[0];
+
+  return NextResponse.json(productData);
 }

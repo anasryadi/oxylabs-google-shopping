@@ -51,7 +51,7 @@ async function ProductPage({ params: { id } }: Props) {
               alt=""
             />
 
-            <div className="">
+            <div className="flex flex-col justify-between">
               {productData.content.images?.full_size
                 .slice(1, 3)
                 .map((image) => (
@@ -62,6 +62,44 @@ async function ProductPage({ params: { id } }: Props) {
                   />
                 ))}
             </div>
+          </div>
+
+          <div className="flex space-x-6 overflow-x-scroll py-2 md:w[30rem]">
+            {productData.content.images?.full_size.slice(3).map((image) => (
+              <img src={image} alt="w-20 h-20 object-contain" />
+            ))}
+          </div>
+        </div>
+        <div className="pt-10">
+          <div>
+            {productData.content.pricing.online[0].details && (
+              <>
+                <h3 className="font-bold text-2xl">Product Details</h3>
+                <p className="text-lg">
+                  {productData.content.pricing.online[0].price_total}
+                  {""}
+                  {productData.content.pricing.online[0].currency}
+                </p>
+                <div className="flex space-x-4">
+                  <p className="text-sm text-gray-600">
+                    ({productData.content.pricing.online[0].price}{" "}
+                    {productData.content.pricing.online[0].currency} +{" "}
+                    {productData.content.pricing.online[0].price_tax}{" "}
+                    {productData.content.pricing.online[0].currency} tax)
+                  </p>
+
+                  {productData.content.pricing.online.length > 1 && (
+                    <p className="text-sm text-blue-600">
+                      + {productData.content.pricing.online.length - 1}
+                      more prices
+                    </p>
+                  )}
+                </div>
+                <p className="text-sm text-gray-600 mt-5">
+                  {productData.content.pricing.online[0].details}
+                </p>
+              </>
+            )}
           </div>
         </div>
       </section>

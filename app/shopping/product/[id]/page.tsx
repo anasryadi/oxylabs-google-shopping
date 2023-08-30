@@ -70,7 +70,7 @@ async function ProductPage({ params: { id } }: Props) {
             ))}
           </div>
         </div>
-        <div className="pt-10">
+        <div className="pt-10 flex-1">
           <div>
             {productData.content.pricing.online[0].details && (
               <>
@@ -100,6 +100,10 @@ async function ProductPage({ params: { id } }: Props) {
                 </p>
               </>
             )}
+
+            <hr className="my-5" />
+
+            <p>{productData.content.description}</p>
           </div>
         </div>
       </section>

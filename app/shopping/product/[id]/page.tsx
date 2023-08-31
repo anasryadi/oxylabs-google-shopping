@@ -54,8 +54,9 @@ async function ProductPage({ params: { id } }: Props) {
             <div className="flex flex-col justify-between">
               {productData.content.images?.full_size
                 .slice(1, 3)
-                .map((image) => (
+                .map((image, i) => (
                   <img
+                  key={i}
                     src={image}
                     alt=""
                     className="w-[9.5rem] h-[9.5rem] object-contain border rounded-md"
@@ -65,8 +66,8 @@ async function ProductPage({ params: { id } }: Props) {
           </div>
 
           <div className="flex space-x-6 overflow-x-scroll py-2 md:w[30rem]">
-            {productData.content.images?.full_size.slice(3).map((image) => (
-              <img src={image} alt="w-20 h-20 object-contain" />
+            {productData.content.images?.full_size.slice(3).map((image, i) => (
+              <img key={i} src={image} alt="w-20 h-20 object-contain" />
             ))}
           </div>
         </div>
@@ -111,7 +112,7 @@ async function ProductPage({ params: { id } }: Props) {
                 <hr />
                 <ul className="space-y-2">
                   {productData.content.highlights?.map((highlight) => (
-                    <li className="list-disc">{highlight}</li>
+                    <li key={highlight} className="list-disc">{highlight}</li>
                   ))}
                 </ul>
               </div>

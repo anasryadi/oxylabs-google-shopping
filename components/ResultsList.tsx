@@ -18,8 +18,9 @@ function ResultsList({ results, term }: Props) {
                 <p className="font-bold">{filter.name}</p>
                 <div className="flex flex-col">
                   <p>{filter.name}</p>
-                  {filter.values.map((value) => (
+                  {filter.values.map((value, i) => (
                     <Link
+                      key={i}
                       prefetch={false}
                       href={`https://www.google.com/$value.url`}
                     >
@@ -75,7 +76,9 @@ function ResultsList({ results, term }: Props) {
                   <p className="font-light">
                     {item.price_str} {item.currency}
                   </p>
-                  <p className="text-[#1B66D2] font-semibold">{item.merchant.name}</p>
+                  <p className="text-[#1B66D2] font-semibold">
+                    {item.merchant.name}
+                  </p>
                 </div>
               </Link>
             ))}

@@ -150,7 +150,7 @@ async function ProductPage({ params: { id } }: Props) {
                     <StarIcon key={i} className="h-5 w-5 text-yellow-500" />
                   ))}
                 </div>
-                <p>"{productData.content.reviews.top_review.text}"</p>
+                <p>{productData.content.reviews.top_review.text}</p>
               </div>
             )}
           </>
